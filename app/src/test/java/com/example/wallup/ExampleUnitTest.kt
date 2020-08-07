@@ -1,4 +1,4 @@
-package com.example.wallupapp
+package com.example.wallup
 
 import org.junit.Test
 

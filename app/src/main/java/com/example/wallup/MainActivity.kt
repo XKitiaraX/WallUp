@@ -1,4 +1,4 @@
-package com.example.wallupapp
+package com.example.wallup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
