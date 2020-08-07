@@ -2,4 +2,12 @@
     <string name="app_name">WallUp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="very_easy">Very easy</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="very_hard">Very hard</string>
+    <string name="show_all_problems">Show all problems</string>
+    <string name="show_actual_problems">Show actual problems</string>
+    <string name="show_old_problems">Show old problems</string>
 </resources>
