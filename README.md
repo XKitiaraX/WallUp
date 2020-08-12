@@ -1,2 +1,0 @@
-# WallUp
-WallUp Android App
