@@ -1,5 +1,6 @@
 package com.example.wallup.BoulderProblems
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -15,7 +16,9 @@ class BoulderProblemsAdapter: RecyclerView.Adapter<BoulderProblemsAdapter.ViewHo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = layoutInflater.inflate(R.layout.list_item_boulder_problem, parent, false)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
