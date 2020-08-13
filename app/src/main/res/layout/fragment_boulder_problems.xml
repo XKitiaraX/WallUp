@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="boulderProblemsViewModel"
+            type="com.example.wallup.boulderproblems.BoulderProblemsViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -27,8 +33,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/veryEasyRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/easyBtn"
@@ -41,8 +47,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/easyRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/mediumBtn"
@@ -55,8 +61,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/mediumRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/hardBtn"
@@ -69,7 +75,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/hardRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:visibility="gone" />
 
             <Button
@@ -83,7 +89,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/veryHardRView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:visibility="gone" />
 
         </LinearLayout>
