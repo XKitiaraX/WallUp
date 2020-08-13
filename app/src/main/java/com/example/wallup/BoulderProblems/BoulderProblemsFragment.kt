@@ -1,7 +1,10 @@
 package com.example.wallup.boulderproblems
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -9,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.wallup.R
 import com.example.wallup.database.ProblemDatabase
 import com.example.wallup.databinding.FragmentBoulderProblemsBinding
+import dev.sasikanth.colorsheet.ColorSheet
 
 class BoulderProblemsFragment : Fragment() {
 
@@ -20,8 +24,12 @@ class BoulderProblemsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // binding and inflate
-        val binding = DataBindingUtil.inflate<FragmentBoulderProblemsBinding>(
-            inflater, R.layout.fragment_boulder_problems, container, false)
+        val binding: FragmentBoulderProblemsBinding  = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_boulder_problems, container, false)
+
+//        val binding = DataBindingUtil.inflate<FragmentBoulderProblemsBinding>(
+//            inflater, R.layout.fragment_boulder_problems, container, false)
+
         val application = requireNotNull(this.activity).application
 
         // ViewModel Factory
@@ -35,16 +43,13 @@ class BoulderProblemsFragment : Fragment() {
         // ViewModel with data binding
         binding.boulderProblemsViewModel = boulderProblemsViewModel
 
-        // lifecycle for observe LiveData
-        binding.setLifecycleOwner(this)
-
         // binding recicler view adapter
         val adapter = BoulderProblemAdapter()
         binding.veryEasyRView.adapter = adapter
-        binding.easyRView.adapter = adapter
-        binding.mediumRView.adapter = adapter
-        binding.hardRView.adapter = adapter
-        binding.veryHardRView.adapter = adapter
+//        binding.easyRView.adapter = adapter
+//        binding.mediumRView.adapter = adapter
+//        binding.hardRView.adapter = adapter
+//        binding.veryHardRView.adapter = adapter
 
         boulderProblemsViewModel.problems.observe(viewLifecycleOwner, Observer {
             it?.let {
@@ -52,9 +57,21 @@ class BoulderProblemsFragment : Fragment() {
             }
         })
 
+        // lifecycle for observe LiveData
+        binding.setLifecycleOwner(this)
+
         // Floating Action Button
         binding.floatingActionButton.setOnClickListener {
-            boulderProblemsViewModel.onInsert()
+            Log.i("Insert", "Fun setOnClickListener")
+//            boulderProblemsViewModel.onInsert()
+            val colors = intArrayOf(Color.BLACK, Color.BLUE, Color.CYAN, Color.BLACK, Color.BLUE, Color.CYAN)
+            var selectedColor : Int
+            ColorSheet().colorPicker(
+                colors = colors,
+                listener = { color ->
+                    selectedColor = color
+                    Toast.makeText(it.context, selectedColor.toString(), Toast.LENGTH_LONG).show()
+                }).show(childFragmentManager)
         }
 
         setHasOptionsMenu(true)

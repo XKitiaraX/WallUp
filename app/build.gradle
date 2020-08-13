@@ -51,4 +51,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
+    // Colorpicker & Material desing
+    implementation "dev.sasikanth:colorsheet:1.0.1"
+    implementation 'com.google.android.material:material:1.1.0'
+
 }

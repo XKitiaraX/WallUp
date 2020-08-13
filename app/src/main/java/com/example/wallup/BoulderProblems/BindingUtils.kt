@@ -4,6 +4,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.wallup.database.BoulderProblem
+import java.text.SimpleDateFormat
 
 @BindingAdapter("problemHoldColor")
 fun ImageView.setProblemHoldColor(item: BoulderProblem) {
@@ -12,5 +13,6 @@ fun ImageView.setProblemHoldColor(item: BoulderProblem) {
 
 @BindingAdapter("problemDate")
 fun TextView.setProblemDate(item: BoulderProblem) {
-    text = item.registerDate.toString()
+    val dateFormated = SimpleDateFormat("dd/MM/yy").format(item.registerDate)
+    text = dateFormated
 }
