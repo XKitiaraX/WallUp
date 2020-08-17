@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/list_item_boulder_problem_img"
+            android:id="@+id/listItemBoulderProblemImg"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_margin="8dp"
@@ -27,14 +27,14 @@
             android:backgroundTint="@android:color/holo_red_light" />
 
         <TextView
-            android:id="@+id/list_item_boulder_problem_date"
+            android:id="@+id/listItemBoulderProblemDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textSize="24sp"
             tools:text="18/11/23"
             app:problemDate="@{boulder}"
-            app:layout_constraintStart_toEndOf="@+id/list_item_boulder_problem_img"
+            app:layout_constraintStart_toEndOf="@+id/listItemBoulderProblemImg"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

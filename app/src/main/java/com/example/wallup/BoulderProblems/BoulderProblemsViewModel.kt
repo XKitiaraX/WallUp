@@ -1,7 +1,6 @@
 package com.example.wallup.boulderproblems
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.wallup.database.BoulderProblem
 import com.example.wallup.database.ProblemDatabaseDao

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".boulderdetail.BoulderDetailFragment">
+
+    <data>
+        <variable
+            name="boulderDetailViewModel"
+            type="com.example.wallup.boulderdetail.BoulderDetailViewModel" />
+        <variable
+            name="boulder"
+            type="com.example.wallup.database.BoulderProblem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/diffBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/CategoryBtn"
+            android:backgroundTint="@android:color/holo_green_dark"
+            tools:text="Register 17/08/20" />
+
+        <ImageView
+            android:id="@+id/boulderDetailColorImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diffBtn"
+            app:problemHoldColor="@{boulder}"
+            android:background="@drawable/dam_img_replacement"
+            android:backgroundTint="@android:color/holo_red_light" />
+
+        <TextView
+            android:id="@+id/boulderDetailColorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="24sp"
+            android:text="@string/holds_color"
+            app:layout_constraintStart_toEndOf="@+id/boulderDetailColorImg"
+            app:layout_constraintTop_toTopOf="@+id/boulderDetailColorImg" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/boulderDetailColorText"
+            app:layout_constraintVertical_bias="0.115" />
+
+        <!--        <TextView-->
+<!--            android:id="@+id/boulderDetailDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:textSize="24sp"-->
+<!--            tools:text="18/11/23"-->
+<!--            app:problemDate="@{boulder}"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/boulderDetailColorImg"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/boulderDetailColorImg" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

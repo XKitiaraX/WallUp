@@ -10,4 +10,5 @@
     <string name="show_all_problems">Show all problems</string>
     <string name="show_actual_problems">Show actual problems</string>
     <string name="show_old_problems">Show old problems</string>
+    <string name="holds_color">Holds color</string>
 </resources>

@@ -15,4 +15,5 @@ fun ImageView.setProblemHoldColor(item: BoulderProblem) {
 fun TextView.setProblemDate(item: BoulderProblem) {
     val dateFormated = SimpleDateFormat("dd/MM/yy").format(item.registerDate)
     text = dateFormated
+    // TODO Cambiar formato guiri para la versión en inglés
 }

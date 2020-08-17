@@ -27,9 +27,6 @@ class BoulderProblemsFragment : Fragment() {
         val binding: FragmentBoulderProblemsBinding  = DataBindingUtil.inflate(inflater,
             R.layout.fragment_boulder_problems, container, false)
 
-//        val binding = DataBindingUtil.inflate<FragmentBoulderProblemsBinding>(
-//            inflater, R.layout.fragment_boulder_problems, container, false)
-
         val application = requireNotNull(this.activity).application
 
         // ViewModel Factory
