@@ -13,6 +13,7 @@ import com.example.wallup.R
 import com.example.wallup.database.ProblemDatabase
 import com.example.wallup.databinding.FragmentBoulderProblemsBinding
 import dev.sasikanth.colorsheet.ColorSheet
+import kotlinx.android.synthetic.main.fragment_boulder_problems.*
 
 class BoulderProblemsFragment : Fragment() {
 
@@ -43,10 +44,10 @@ class BoulderProblemsFragment : Fragment() {
         // binding recicler view adapter
         val adapter = BoulderProblemAdapter()
         binding.veryEasyRView.adapter = adapter
-//        binding.easyRView.adapter = adapter
-//        binding.mediumRView.adapter = adapter
-//        binding.hardRView.adapter = adapter
-//        binding.veryHardRView.adapter = adapter
+        binding.easyRView.adapter = adapter
+        binding.mediumRView.adapter = adapter
+        binding.hardRView.adapter = adapter
+        binding.veryHardRView.adapter = adapter
 
         boulderProblemsViewModel.problems.observe(viewLifecycleOwner, Observer {
             it?.let {
@@ -57,18 +58,38 @@ class BoulderProblemsFragment : Fragment() {
         // lifecycle for observe LiveData
         binding.setLifecycleOwner(this)
 
+        binding.veryEasyBtn.setOnClickListener {
+            boulderProblemsViewModel.changeVERViewVisibility(boulderProblemsViewModel.veRViewVis)
+        }
+
+        binding.easyBtn.setOnClickListener {
+            boulderProblemsViewModel.changeVERViewVisibility(boulderProblemsViewModel.eRViewVis)
+        }
+
+        binding.mediumBtn.setOnClickListener {
+            boulderProblemsViewModel.changeVERViewVisibility(boulderProblemsViewModel.mRViewVis)
+        }
+
+        binding.hardBtn.setOnClickListener {
+            boulderProblemsViewModel.changeVERViewVisibility(boulderProblemsViewModel.hRViewVis)
+        }
+
+        binding.veryHardBtn.setOnClickListener {
+            boulderProblemsViewModel.changeVERViewVisibility(boulderProblemsViewModel.vhRViewVis)
+        }
+
         // Floating Action Button
         binding.floatingActionButton.setOnClickListener {
             Log.i("Insert", "Fun setOnClickListener")
-//            boulderProblemsViewModel.onInsert()
-            val colors = intArrayOf(Color.BLACK, Color.BLUE, Color.CYAN, Color.BLACK, Color.BLUE, Color.CYAN)
-            var selectedColor : Int
-            ColorSheet().colorPicker(
-                colors = colors,
-                listener = { color ->
-                    selectedColor = color
-                    Toast.makeText(it.context, selectedColor.toString(), Toast.LENGTH_LONG).show()
-                }).show(childFragmentManager)
+            boulderProblemsViewModel.onInsert()
+            // val colors = intArrayOf(Color.BLACK, Color.BLUE, Color.CYAN, Color.BLACK, Color.BLUE, Color.CYAN)
+            // var selectedColor : Int
+            // ColorSheet().colorPicker(
+            //     colors = colors,
+            //     listener = { color ->
+            //         selectedColor = color
+            //         Toast.makeText(it.context, selectedColor.toString(), Toast.LENGTH_LONG).show()
+            //     }).show(childFragmentManager)
         }
 
         setHasOptionsMenu(true)

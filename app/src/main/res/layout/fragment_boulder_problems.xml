@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="boulderProblemsViewModel"
             type="com.example.wallup.boulderproblems.BoulderProblemsViewModel" />
@@ -35,7 +35,7 @@
                     android:id="@+id/veryEasyRView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="@{boulderProblemsViewModel.veRViewVis ? View.VISIBLE : View.GONE}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <Button
@@ -51,8 +51,9 @@
                     android:id="@+id/easyRView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    app:layout_constraintTop_toBottomOf="@+id/easyBtn" />
+                    android:visibility="@{boulderProblemsViewModel.eRViewVis ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@+id/easyBtn"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <Button
                     android:id="@+id/mediumBtn"
@@ -67,8 +68,9 @@
                     android:id="@+id/mediumRView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    app:layout_constraintTop_toBottomOf="@+id/mediumBtn" />
+                    android:visibility="@{boulderProblemsViewModel.mRViewVis ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@+id/mediumBtn"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <Button
                     android:id="@+id/hardBtn"
@@ -83,8 +85,9 @@
                     android:id="@+id/hardRView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/hardBtn" />
+                    android:visibility="@{boulderProblemsViewModel.hRViewVis ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@+id/hardBtn"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <Button
                     android:id="@+id/veryHardBtn"
@@ -99,8 +102,9 @@
                     android:id="@+id/veryHardRView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/veryHardBtn" />
+                    android:visibility="@{boulderProblemsViewModel.vhRViewVis ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@+id/veryHardBtn"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </LinearLayout>
         </ScrollView>
 
